@@ -96,6 +96,12 @@ A model is the class of who's instances of that class create the rows in the dat
 
 ### Review Questions:  
 20. Given a CSV file (“films.csv”) with these headers [id, title, description], how would you load these into your database to create new instances of Film?  
+-terminal: rake db:create  
+-terminal: rake db:create_migration NAME=create_films  
+-This will create your migration file that needs to be filled out with the object attributes (columns).  
+-terminal: rake db:migrate  
+-In the seeds.rb file you will need to write the code to read through (CSV.foreach) and create an object with each of the headers (true) in your CSV file.  
+-terminal: rake db:seed  
 
 21. Given the following hash:
 ```
@@ -106,19 +112,19 @@ activities = {
   antiquing: {cost: $200, supplies: ['list of antique stores']}
 }
 ```
-How would I add 'granola bar' to things you should have when hiking?
+How would I add 'granola bar' to things you should have when hiking?  
+activities[:hiking][:supplies] << 'granola bar'  
 
-22. What are the 4 Principles of OOP? Give a one sentence explanation of each.
+22. What are the 4 Principles of OOP? Give a one sentence explanation of each.  
+Encapsulation- restricting the access of data to only what needs it  
+Abstraction- creating a digital representation of a real world item (a class instance)  
+Inheritance- children inherit from their parents, grandparents, supersclass, etc.  
+Polymorphism-  a method can share the name of another method, but will produce different results based on the type/class it is being enacted on  
 
 
 ### Self Assessment:
 Choose One: (erase the others)
-* I was able to answer every question without relying on outside resources
 * I was able to answer most questions independently, but utilized outside resources for a few
-* I was able to answer a few questions independently, but relied heavily on outside resources 
 
 Choose One:
-* I feel confident about the content presented this week
 * I feel comfortable with the content presented this week
-* I feel overwhelmed by the content presented this week
-* I feel quite lost by the content presented this week
